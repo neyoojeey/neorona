@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
     IonGrid,
     IonRow,
@@ -9,17 +9,16 @@ import {
     IonCardContent,
     IonText,
     IonSpinner
-} from '@ionic/react';
-import moment from 'moment';
+} from "@ionic/react";
+import moment from "moment";
 
-import useStats from '../../utils/useStats';
-import { numberWithCommas } from '../../helpers/helpers';
+import useStats from "../../utils/useStats";
+import { numberWithCommas } from "../../helpers/helpers";
 
 const Stats = ({ url }) => {
     const { stats, loading, error } = useStats(url);
     if (loading) return <IonSpinner></IonSpinner>;
     if (error) return <p>Error...</p>;
-    console.log(stats);
     return (
         <IonGrid className='ion-margin-top'>
             <IonRow>

@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export default function useCountries(url) {
     const [stats, setStats] = useState();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState();
     useEffect(() => {
-        console.log('Mounting or updating');
+        console.log("Mounting or updating");
         async function fetchData() {
             setLoading(true);
             setError();
-            console.log('Fetching Data');
+            console.log("Fetching Data");
             const data = await fetch(url)
                 .then(res => res.json())
                 .catch(err => {

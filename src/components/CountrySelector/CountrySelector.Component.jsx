@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
     IonLabel,
     IonItem,
@@ -8,14 +8,16 @@ import {
     IonGrid,
     IonRow,
     IonCol
-} from '@ionic/react';
+} from "@ionic/react";
 
-import useCountries from '../../utils/useCountries';
-import Stats from '../Stats/Stats.Component';
+import useCountries from "../../utils/useCountries";
+import Stats from "../Stats/Stats.Component";
 
 const CountrySelector = ({ url }) => {
     const { stats: countries, loading, error } = useCountries(url);
-    const [selectedCountry, setSelectedCountry] = useState('PHL');
+    const [selectedCountry, setSelectedCountry] = useState("PHL");
+
+    console.log(countries);
     if (loading) return <IonSpinner></IonSpinner>;
     if (error) return <p>Error...</p>;
 
@@ -37,18 +39,22 @@ const CountrySelector = ({ url }) => {
                                 onIonChange={e =>
                                     setSelectedCountry(e.detail.value)
                                 }>
-                                {Object.entries(countries.countries).map(
-                                    ([country, code], index) => (
-                                        <IonSelectOption
-                                            selected={
-                                                selectedCountry ===
-                                                countries.iso3[code]
-                                            }
-                                            key={index}
-                                            value={countries.iso3[code]}>
-                                            {country}
-                                        </IonSelectOption>
+                                {countries.countries.length > 0 ? (
+                                    countries.countries.map(
+                                        (country, index) => (
+                                            <IonSelectOption
+                                                selected={
+                                                    selectedCountry ===
+                                                    country.iso3
+                                                }
+                                                key={index}
+                                                value={country.iso3}>
+                                                {country.name}
+                                            </IonSelectOption>
+                                        )
                                     )
+                                ) : (
+                                    <IonSpinner></IonSpinner>
                                 )}
                             </IonSelect>
                         </IonItem>
