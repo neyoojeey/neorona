@@ -60,7 +60,7 @@ const Stats = ({ url }) => {
                     <IonCard>
                         <IonCardHeader>
                             <IonCardTitle class='ion-text-center'>
-                                Death
+                                Deaths
                             </IonCardTitle>
                         </IonCardHeader>
 
