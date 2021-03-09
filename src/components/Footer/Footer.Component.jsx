@@ -7,7 +7,7 @@ const Footer = () => {
             <IonToolbar class='ion-text-center'>
                 <div className='container'>
                     <IonText>
-                        Handcrafted by{' '}
+                        Handcrafted by 
                         <IonRouterLink
                             href='https://neyoojeey.github.io/neojayandong/'
                             target='_blank'
