@@ -17,7 +17,7 @@ const Home: React.FC = () => {
             <IonHeader>
                 <IonToolbar>
                     <div className='container'>
-                        <IonTitle>Corona Stats</IonTitle>
+                        <IonTitle>Corona Stats 2022</IonTitle>
                     </div>
                 </IonToolbar>
             </IonHeader>
